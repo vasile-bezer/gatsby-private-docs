@@ -37,8 +37,18 @@
 }
 
 .header__link:hover,
-.header__link:active,
+.header__link:active {
+  background: white;
+  color: rebeccapurple;
+}
+
+/*
+*** -----FOCUS PSEUDO CLASS-----
+ The :focus CSS pseudo-class is applied when an element has received focus, either from 
+ the user selecting it with the use of a keyboard or by activating with the mouse
+*** -----FOCUS PSEUDO CLASS-----
 .header__link:focus {
   background: white;
   color: rebeccapurple;
 }
+*/

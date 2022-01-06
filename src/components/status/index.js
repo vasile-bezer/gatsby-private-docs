@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, navigate } from "@reach/router"
-import { getCurrentUser, isLoggedIn, logout } from "../../auth/auth"
+import { getCurrentUser, isLoggedIn, logout } from "auth/auth"
 import { status, status__text } from "./status.module.css"
 
 const Status = () => {

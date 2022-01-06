@@ -1,0 +1,11 @@
+/* seemingly not necessary for gatsby-plugin-resolve-src to function */
+
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "*": ["types/*", "*"]
+    }
+  }
+}

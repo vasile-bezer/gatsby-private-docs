@@ -2,13 +2,15 @@ import React from "react"
 import { form, form__label, form__input, form__button } from "./form.module.css"
 import { navigate } from "@reach/router"
 
-const Form = ({ handleSubmit, handleUpdate }) => (
+const Form = ({ handleSubmit, handleUpdate, currentPath }) => (
   <form
     className={form}
     method="post"
     onSubmit={event => {
       handleSubmit(event)
-      navigate(`/app/profile`)
+      /* currentPath takes current value if not falsey else /*/
+      currentPath = currentPath ?? `/`
+      navigate(currentPath)
     }}
   >
     <p>

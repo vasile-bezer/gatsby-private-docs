@@ -1,6 +1,6 @@
 import React from "react"
 import View from "./view"
-import { getCurrentUser } from "../auth/auth"
+import { getCurrentUser } from "auth/auth"
 
 const Profile = () => {
   const { name } = getCurrentUser()

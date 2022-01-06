@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import View from "../components/view"
-import Status from "../components/status"
+import Layout from "components/layout"
+import View from "components/view"
+import Status from "components/status"
 
 const Index = () => (
   <Layout>

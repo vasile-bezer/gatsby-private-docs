@@ -1,0 +1,6 @@
+.footer {
+  margin-top: 3rem;
+  display: flex;
+  /*center div using display flex method*/
+  justify-content: center;
+}

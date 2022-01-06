@@ -48,6 +48,8 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
   }
 }
 
+/* per ogni richiesta nel client di una pagina che comincia con /app 
+  la pagina viene creata */
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
 
