@@ -1,22 +1,19 @@
 import React from "react"
-import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import styled from "@emotion/styled"
 import PropTypes from "prop-types"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import { breadcrumbContainer } from "./breadcrumb.module.css" //:breadcrumb-container"
 
 export default function BreadCrumbs({ crumbs }) {
   if (crumbs[0].pathname === "/" && crumbs.lenght !== 1) {
     crumbs.splice(0, 1)
   }
   return (
-    <BreadCrumbContainer>
-      <Breadcrumb crumbs={crumbs} crumbSeparator="›" />
-    </BreadCrumbContainer>
+    <div className={breadcrumbContainer}>
+      <Breadcrumb crumbs={crumbs} crumbSeparator="&rsaquo;" />
+    </div>
   )
 }
 
-const BreadCrumbContainer = styled.div`
-  margin-top: 70px;
-`
 BreadCrumbs.propTypes = {
   crumbs: PropTypes.object.isRequired,
 }

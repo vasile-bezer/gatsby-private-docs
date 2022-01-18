@@ -10,3 +10,15 @@
   max-width: 960;
   padding: 0;
 }
+
+.site-wrapper {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.25s var(--ease-in-out-quad);
+}
+
+.site-content-wrapper {
+  flex-grow: 1;
+  min-width: 20rem;
+}

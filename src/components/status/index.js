@@ -8,9 +8,9 @@ const Status = () => {
   if (!isLoggedIn()) {
     details = (
       <p className={status__text}>
-        To get the full app experience, you’ll need to
-        {` `}
-        <Link to="/app/login">log in</Link>.
+        Per accedere ai contenuti è necessario essere autenticati
+        {`, `}
+        <Link to="/app/login">accedi</Link>.
       </p>
     )
   } else {
@@ -18,7 +18,7 @@ const Status = () => {
 
     details = (
       <p className={status__text}>
-        Logged in as {name} ({email}
+        Connesso come {name} ({email}
         )!
         {` `}
         <a
@@ -28,7 +28,7 @@ const Status = () => {
             logout(() => navigate(`/app/login`))
           }}
         >
-          log out
+          scollegati
         </a>
       </p>
     )

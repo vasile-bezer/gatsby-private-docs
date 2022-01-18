@@ -1,5 +1,5 @@
 import React from "react"
-import View from "./view"
+import View from "components/view"
 import { getCurrentUser } from "auth/auth"
 
 const Details = () => {

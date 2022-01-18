@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import {
   header,
@@ -8,13 +9,14 @@ import {
   header__link,
   header__linkHome,
 } from "./header.module.css"
+import Status from "components/status"
 
-const Header = () => (
+const Header = ({ siteTitle }) => (
   <header className={header}>
     <div className={header__wrap}>
       <h1 className={header__heading}>
         <Link to="/" className={`${header__link} ${header__linkHome}`}>
-          Gatsby Auth
+          {siteTitle}
         </Link>
       </h1>
       <nav role="main" className={header__nav}>
@@ -29,7 +31,15 @@ const Header = () => (
         </Link>
       </nav>
     </div>
+    <Status />
   </header>
 )
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
 
 export default Header

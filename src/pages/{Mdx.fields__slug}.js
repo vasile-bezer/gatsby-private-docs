@@ -4,9 +4,10 @@ import { MDXRenderer } from "gatsby-plugin-mdx" /* never import MDXRenderer from
 import PropTypes from "prop-types"
 import { Router } from "@reach/router"
 
-import PrivateRoute from "../components/private-route"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import PrivateRoute from "components/private-route"
+import Layout from "components/layout"
+import Seo from "components/seo"
+import View from "components/view"
 
 const MainTemplate = ({ data, location, pageContext }) => {
   const { mdx } = data
@@ -16,16 +17,19 @@ const MainTemplate = ({ data, location, pageContext }) => {
       headings={mdx.headings}
       location={location}
       pageContext={pageContext}
+      tableOfContents={mdx.tableOfContents}
     >
       <Seo title={mdx.fields.title} />
-      <Router>
-        <PrivateRoute
-          path={location.pathname}
-          component={MDXRenderer}
-          body={mdx.body}
-          currentPath={currentPath}
-        />
-      </Router>
+      <View>
+        <Router>
+          <PrivateRoute
+            path={location.pathname}
+            component={MDXRenderer}
+            body={mdx.body}
+            currentPath={currentPath}
+          />
+        </Router>
+      </View>
     </Layout>
   )
 }
@@ -42,6 +46,7 @@ export const pageQuery = graphql`
         title
         slug
       }
+      tableOfContents
     }
   }
 `

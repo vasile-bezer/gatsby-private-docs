@@ -2,11 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "components/layout"
 import View from "components/view"
-import Status from "components/status"
 
 const Index = () => (
   <Layout>
-    <Status />
     <View title="Simple Authentication Example">
       <p>
         This is a simple example of creating dynamic apps with Gatsby that

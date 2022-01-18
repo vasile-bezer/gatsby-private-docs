@@ -8,6 +8,14 @@ const GlobalStyles = createGlobalStyle`
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+
+    /*colors*/
+    --text: #0e1111;
+    --background: #fff;
+    --primary: #01447e;
+    --secondary: #9f3030;
+    --sidebar: #e9eff4;
+    --borderColor: #bbbbbb;
   }
   html {
     scroll-behavior: smooth;
@@ -28,6 +36,8 @@ const GlobalStyles = createGlobalStyle`
     overflow-y: scroll;
     scroll-behavior: smooth;
     letter-spacing: -0.0027777778rem;
+    font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
+    
   }
 
   .gatsby-resp-image-image {
@@ -40,11 +50,6 @@ const GlobalStyles = createGlobalStyle`
     left: 0;
   }
 
-  nav.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-    background-color: var(--theme-ui-colors-sidebar);
-  }
 
   .breadcrumb__title {
     color: var(--theme-ui-colors-text);
@@ -52,30 +57,41 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  nav .breadcrumb__list {
-    flex-wrap: wrap;
+  .breadcrumb {
     list-style: none;
-    margin: 0;
-    padding-left: 0;
+    background-color: var(--sidebar);
+    
   }
 
-  nav .breadcrumb__list__item {
+  .breadcrumb__list {
+    padding: 0;
+    text-align: center;
+    padding: 0.3%;
+  }
+
+  .breadcrumb__list__item {
+    margin-top: 0;
+    height: 100%;
+    width: inherit;
     display: inline;
+
+    text-align: center;
+    vertical-align: 0%;
   }
 
-  nav .breadcrumb__link {
-    font-size: 0.8rem;
+  .breadcrumb__link {
+    font-size: 0.9rem;
     font-weight: normal;
     color: var(--theme-ui-colors-text);
     text-decoration: none;
-    padding: 8px;
+
     &:hover {
       text-decoration: none;
     }
   }
 
   nav .breadcrumb__link:hover {
-    color: var(--theme-ui-colors-primary);
+    color: purple;
   }
 
   nav .breadcrumb__link__active {
@@ -84,15 +100,13 @@ const GlobalStyles = createGlobalStyle`
 
   nav .breadcrumb__link__disabled {
     text-decoration: none;
-    padding: 8px;
     color: black;
   }
 
   nav .breadcrumb__separator {
     color: black;
-    font-size: 0.8rem;
     margin: 0 0.25em;
-    padding: 2px 1px;
+    vertical-align: 0%;
   }
 `
 

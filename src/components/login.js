@@ -27,7 +27,7 @@ class Login extends React.Component {
     }
 
     return (
-      <View title="Log In">
+      <View title="Accedi">
         <Form
           handleUpdate={e => this.handleUpdate(e)}
           handleSubmit={e => this.handleSubmit(e)}

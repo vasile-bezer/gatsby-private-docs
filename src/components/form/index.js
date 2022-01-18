@@ -14,11 +14,11 @@ const Form = ({ handleSubmit, handleUpdate, currentPath }) => (
     }}
   >
     <p>
-      For this demo, please log in with the username <code>gatsby</code> and the
+      Per questa demo, accedere con il nome utente <code>gatsby</code> e la
       password <code>demo</code>.
     </p>
     <label className={form__label}>
-      Username
+      Nome utente
       <input
         className={form__input}
         type="text"
@@ -35,7 +35,7 @@ const Form = ({ handleSubmit, handleUpdate, currentPath }) => (
         onChange={handleUpdate}
       />
     </label>
-    <input className={form__button} type="submit" value="Log In" />
+    <input className={form__button} type="submit" value="Accedi" />
   </form>
 )
 
