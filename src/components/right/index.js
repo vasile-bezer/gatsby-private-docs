@@ -26,21 +26,23 @@ const RightSidebar = ({ tableOfContents, location }) => {
   return (
     <RightSidebarWrapper>
       <RightSidebarNav>
-        <RightSidebarTitle>Contenuti</RightSidebarTitle>
-        <RightSidebarList>
-          <div
-            items={listItems.map(item => {
-              return item.url.substring(1)
-            })}
-            currentClassName="is-current"
-          >
-            {listItems.map(item => (
-              <li key={item.url}>
-                <ListItem location={location} item={item} />
-              </li>
-            ))}
-          </div>
-        </RightSidebarList>
+        <div style={{ position: "sticky", top: "0" }}>
+          <RightSidebarTitle>Contenuti</RightSidebarTitle>
+          <RightSidebarList>
+            <div
+              items={listItems.map(item => {
+                return item.url.substring(1)
+              })}
+              currentClassName="is-current"
+            >
+              {listItems.map(item => (
+                <li key={item.url}>
+                  <ListItem location={location} item={item} />
+                </li>
+              ))}
+            </div>
+          </RightSidebarList>
+        </div>
       </RightSidebarNav>
     </RightSidebarWrapper>
   )
@@ -51,7 +53,9 @@ const RightSidebarWrapper = styled.aside`
   /*flex: 0 0 16rem;
   font-size: 0.75rem;
   font-weight: 600;*/
-
+  display: flex;
+  position: relative;
+  flex-direction: column;
   /*top: 0;
   bottom: 0;
   right: 0%;
@@ -62,11 +66,12 @@ const RightSidebarWrapper = styled.aside`
 `
 
 const RightSidebarNav = styled.nav`
-  overflow-x: hidden;
-  overflow-y: auto;
+  position: relative;
+  display: block;
+  /*overflow-x: hidden;
+  overflow-y: auto;*/
   width: 16rem;
-
-  position: sticky;
+  flex: 1;
 `
 
 const RightSidebarTitle = styled.p`
@@ -77,8 +82,9 @@ const RightSidebarTitle = styled.p`
 `
 
 const RightSidebarList = styled.ul`
+  position: -webkit-sticky;
   position: sticky;
-
+  top: 0;
   margin: 0;
   padding: 0;
   list-style: none;
