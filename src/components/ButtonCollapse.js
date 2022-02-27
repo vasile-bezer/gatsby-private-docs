@@ -21,10 +21,7 @@ const ButtonCollapse = ({ onClick, isCollapsed }) => {
 }
 
 const StyledButtonCollapse = styled.button`
-  /*right: 1.2rem;*/
-  margin: 0;
-  /*padding: 0.5rem 1.8rem 0.5rem 0rem;
-  height: 37px;*/
+  margin: 0 10px auto;
   background: none;
   border: 0;
   cursor: pointer;

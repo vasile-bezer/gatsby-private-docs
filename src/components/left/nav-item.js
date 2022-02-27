@@ -21,16 +21,18 @@ const NavItem = ({ item }) => {
       <div style={{ display: "inline flex" }}>
         <NavItemLink to={"/" + pageUrl} activeClassName="is-active">
           {item.title}
+
+          {hasChildren && (
+            <ButtonCollapse
+              activeClassName="is-active"
+              onClick={event => {
+                event.preventDefault()
+                dispatch({ type: "TOGGLE_NAV_COLLAPSED", url: pageUrl })
+              }}
+              isCollapsed={!isCollapsed}
+            />
+          )}
         </NavItemLink>
-        {hasChildren && (
-          <ButtonCollapse
-            activeClassName="is-active"
-            onClick={() => {
-              dispatch({ type: "TOGGLE_NAV_COLLAPSED", url: pageUrl })
-            }}
-            isCollapsed={!isCollapsed}
-          />
-        )}
       </div>
       {hasChildren && isCollapsed && (
         <NavItemChild>
@@ -47,6 +49,7 @@ const NavItem = ({ item }) => {
 const StyledNavItem = styled.li`
   margin: 0rem 0rem 0rem 0rem;
   position: relative;
+  overflow: auto;
   display: block;
   padding: 0;
   width: 100%;
@@ -58,7 +61,7 @@ const NavItemLink = styled(Link)`
   overflow-wrap: break-word;
   padding: 0.5rem 0.5rem 0.5rem 1.2rem;
   /*width: 90%;*/
-
+  position: relative;
   font-weight: normal;
   text-decoration: none;
 
