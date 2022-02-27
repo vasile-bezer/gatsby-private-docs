@@ -8,11 +8,12 @@ import {
   header__nav,
   header__link,
   header__linkHome,
+  header__elevation,
 } from "./header.module.css"
 import Status from "components/status"
 
 const Header = ({ siteTitle }) => (
-  <header className={header}>
+  <header className={`${header} ${header__elevation}`}>
     <div className={header__wrap}>
       <h1 className={header__heading}>
         <Link to="/" className={`${header__link} ${header__linkHome}`}>
@@ -21,13 +22,13 @@ const Header = ({ siteTitle }) => (
       </h1>
       <nav role="main" className={header__nav}>
         <Link to="/" className={header__link}>
-          Home
+          Root
         </Link>
         <Link to="/app/profile" className={header__link}>
-          Profile
+          Profilo
         </Link>
         <Link to="/app/details" className={header__link}>
-          Details
+          Dettagli
         </Link>
       </nav>
     </div>
