@@ -29,7 +29,7 @@ exports.onCreateNode = ({ node, getNode, actions, reporter }) => {
     if (uri === "index") {
       uri = ""
     }
-    const item = findUrl(uri, treeList)
+    const item = findUrl(uri.toLowerCase(), treeList)
     createNodeField({
       name: `slug`,
       node,
