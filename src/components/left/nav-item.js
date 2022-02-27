@@ -27,6 +27,7 @@ const NavItem = ({ item }) => {
               activeClassName="is-active"
               onClick={event => {
                 event.preventDefault()
+                event.stopPropagation()
                 dispatch({ type: "TOGGLE_NAV_COLLAPSED", url: pageUrl })
               }}
               isCollapsed={!isCollapsed}
