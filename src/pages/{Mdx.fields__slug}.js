@@ -20,7 +20,7 @@ const MainTemplate = ({ data, location, pageContext }) => {
       tableOfContents={mdx.tableOfContents}
     >
       <Seo title={mdx.fields.title} />
-      <View>
+      <View title={undefined}>
         <Router>
           <PrivateRoute
             path={location.pathname}
