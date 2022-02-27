@@ -15,5 +15,5 @@ export default function BreadCrumbs({ crumbs }) {
 }
 
 BreadCrumbs.propTypes = {
-  crumbs: PropTypes.object.isRequired,
+  crumbs: PropTypes.array.isRequired,
 }
