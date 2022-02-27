@@ -14,8 +14,8 @@ const ListItemLink = styled(Link)`
   padding: 0.2rem 0;
   width: 100%;
   text-decoration: none;
-  /*${p => console.log(p)}
-  color: ${p => p.theme.colors.text};
+  ${p => console.log(p)}
+  /*color: ${p => p.theme.colors.text};
   
   transition: color ${p => p.theme.transition};
   &:focus {

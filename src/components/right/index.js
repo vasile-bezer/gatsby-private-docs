@@ -2,6 +2,7 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
 import ListItem from "./ListItems"
+import { stickyAside } from "components/right/toc.module.css"
 
 const RightSidebar = ({ tableOfContents, location }) => {
   const [listItems] = useState(() => {
@@ -26,14 +27,13 @@ const RightSidebar = ({ tableOfContents, location }) => {
   return (
     <RightSidebarWrapper>
       <RightSidebarNav>
-        <div style={{ position: "sticky", top: "0" }}>
+        <div className={stickyAside}>
           <RightSidebarTitle>Contenuti</RightSidebarTitle>
           <RightSidebarList>
             <div
               items={listItems.map(item => {
                 return item.url.substring(1)
               })}
-              currentClassName="is-current"
             >
               {listItems.map(item => (
                 <li key={item.url}>
@@ -66,6 +66,7 @@ const RightSidebarWrapper = styled.aside`
 `
 
 const RightSidebarNav = styled.nav`
+  margin-left: 10px;
   position: relative;
   display: block;
   /*overflow-x: hidden;
@@ -93,10 +94,6 @@ const RightSidebarList = styled.ul`
     padding: 0;
     list-style: none;
   }
-`
-
-const RightSidebarListItem = styled.li`
-  margin: 0.3rem 0;
 `
 
 RightSidebar.propTypes = {
