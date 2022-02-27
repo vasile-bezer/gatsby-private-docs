@@ -18,7 +18,6 @@ const GlobalStyles = createGlobalStyle`
     --borderColor: #bbbbbb;
   }
   html {
-    scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
   }
   *,
@@ -33,7 +32,6 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     margin: 0px; /* removes default style */
     box-sizing: border-box;
-    overflow-y: scroll;
     scroll-behavior: smooth;
     letter-spacing: -0.0027777778rem;
     font-family: 'Avenir', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
