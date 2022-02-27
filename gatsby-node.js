@@ -62,3 +62,17 @@ exports.onCreatePage = async ({ page, actions }) => {
     createPage(page)
   }
 }
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const node = {
+    /*
+    id: createNodeId(`toc-${t.myId}`),*/
+    content: JSON.stringify(treeList),
+    id: createNodeId(`toc`),
+    internal: {
+      type: "tree",
+      contentDigest: createContentDigest(treeList),
+    },
+  }
+  actions.createNode(node)
+}

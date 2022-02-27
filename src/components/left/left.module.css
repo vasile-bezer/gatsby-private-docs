@@ -1,0 +1,23 @@
+.left-sidebar-wrapper {
+  margin-top: 10px;
+  margin-left: 0;
+  flex: 0 0 19rem;
+  font-size: 0.875rem;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.left-sidebar-nav {
+  top: 0;
+
+  overflow-x: scroll;
+  overflow-y: auto;
+  display: initial;
+  padding: 1rem 0;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
