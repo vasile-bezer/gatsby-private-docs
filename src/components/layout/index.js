@@ -7,7 +7,6 @@ import Header from "components/header"
 import BreadCrumbs from "components/breadcrumbs"
 import { isLoggedIn } from "auth/auth"
 import LeftSideBar from "components/left"
-import Search from "components/search"
 
 // Global styles and component-specific styles.
 import "./global.css"
@@ -41,14 +40,13 @@ const Layout = ({ location, tableOfContents, children, pageContext }) => {
   const { breadcrumb: { crumbs = undefined } = {} } = pageContext || {}
 
   const refContainer = useRef(undefined)
-  const searchIndices = [{ name: `Pages`, title: `Pages` }]
+
   //crossOriginIsolated
   return (
     <div className={wrapper}>
       <GlobalStyles />
       <Helmet title="Simple Authentication With Gatsby" />
       {title && <Header siteTitle={title} />}
-      <Search indices={searchIndices} />
       <div className={mainWrapper}>
         {isLoggedIn() && !!crumbs && <BreadCrumbs crumbs={crumbs} />}
         <div className={other__main__wrapper}>

@@ -1,4 +1,7 @@
 .status {
+  margin: 0;
+  display: flex;
+  justify-content: center;
   background: lightgrey;
   font-size: 87.5%;
   padding: 0.25rem;

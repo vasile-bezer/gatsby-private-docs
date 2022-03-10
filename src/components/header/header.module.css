@@ -12,6 +12,7 @@
 }
 
 .header__wrap {
+  box-sizing: border-box;
   align-items: baseline;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
