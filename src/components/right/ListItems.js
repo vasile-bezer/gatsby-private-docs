@@ -15,13 +15,13 @@ const ListItemLink = styled(Link)`
   width: 100%;
   text-decoration: none;
   ${p => console.log(p)}
-  /*color: ${p => p.theme.colors.text};
+  color: ${p => p.theme.colors.text}
   
   transition: color ${p => p.theme.transition};
   &:focus {
     color: ${p => p.theme.colors.text};
-  }*/
-  &.is-active {
+  }
+  */ &.is-active {
     font-weight: bold;
   }
 `
