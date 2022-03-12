@@ -18,28 +18,55 @@ const closed = css`
 `
 
 export default styled(SearchBox)`
-  display: flex;
-  flex-direction: row-reverse;
+  display: inline-flex;
+  flex: 1 1 300px;
   align-items: center;
-  margin-bottom: 0;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid ${p => p.theme.colors.borderColor};
+  border-radius: 4px;
+  overflow: hidden;
+  &:focus-within {
+    border: 1px solid rgb(38, 132, 255) !important;
+    & > svg {
+      color: #777;
+    }
+  }
+  &:hover {
+    border: 1px solid #777;
+  }
 
   .SearchInput {
+    border: 0;
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: inherit;
+    appearance: none;
+    padding: 5px;
+    flex: 1;
+    background-color: ${p => p.theme.colors.background};
+    color: inherit;
     outline: none;
-    border: ${({ hasFocus }) => (hasFocus ? "auto" : "none")};
-    font-size: 1em;
-    transition: 100ms;
-    border-radius: 2px;
-    color: ${({ theme }) => theme.foreground};
-    ::placeholder {
-      color: ${({ theme }) => theme.faded};
+    input:-webkit-autofill:first-line {
+      color: white;
     }
-    ${({ hasFocus }) => (hasFocus ? open : closed)}
+    ::placeholder {
+      color: #bbb;
+      opacity: 1;
+    }
   }
 
   .SearchIcon {
-    width: 1em;
-    margin: 0.3em;
-    color: ${({ theme }) => theme.foreground};
-    pointer-events: none;
+    margin-right: 1px;
+    cursor: pointer;
+    color: #bbb;
+    &:hover {
+      color: #000 !important;
+      borderleft: 1px solid var #000 !important;
+    }
+    borderleft: 1px solid #bbb;
+    borderradius: 0;
   }
 `
