@@ -57,7 +57,12 @@ exports.onCreatePage = async ({ page, actions }) => {
   // only on the client.
   if (page.path.match(/^\/app/)) {
     page.matchPath = `/app/*`
-
+    //page.context = { path: page.path }
+    /*
+     * NOTE: There are a few reserved names that cannot be used in context. They are:
+     *  path, matchPath, component, componentChunkName, pluginCreator___NODE, and pluginCreatorId.
+     *
+     */
     // Update the page.
     createPage(page)
   }
