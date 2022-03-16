@@ -5,10 +5,11 @@ import Profile from "components/profile"
 import Details from "components/details"
 import Login from "components/login"
 import PrivateRoute from "components/private-route"
+import { Breadcrumb } from "react-instantsearch-dom"
 
-const App = props => {
+const App = ({ location, pageContext }) => {
   return (
-    <Layout>
+    <Layout location={location} pageContext={pageContext}>
       <Router>
         <PrivateRoute path="/guacamole/details" component={Details} />
         <PrivateRoute path="/app/details" component={Details} />
