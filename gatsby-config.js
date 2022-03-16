@@ -107,5 +107,5 @@ module.exports = {
         queries: require("./util/algolia-queries"),
       },
     },
-  ],
+  ].filter(Boolean),
 }
