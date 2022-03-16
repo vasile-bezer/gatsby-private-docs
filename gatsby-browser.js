@@ -5,6 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+//export { wrapRootElement } from './gatsby/wrapRootElement';
+//export { wrapPageElement } from './gatsby/wrapPageElement';
+
 const React = require("react")
 const GlobalContextProvider =
   require("./src/context/GlobalContextProvider").default
