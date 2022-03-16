@@ -1,4 +1,8 @@
 import React, { useReducer } from "react"
+import { ThemeProvider } from "styled-components"
+
+import defaultTheme from "../styles/theme"
+import GlobalStyle from "../styles/global"
 
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()
@@ -26,11 +30,14 @@ function reducer(state, action) {
 const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
-    <GlobalStateContext.Provider value={state}>
-      <GlobalDispatchContext.Provider value={dispatch}>
-        {children}
-      </GlobalDispatchContext.Provider>
-    </GlobalStateContext.Provider>
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyle />
+      <GlobalStateContext.Provider value={state}>
+        <GlobalDispatchContext.Provider value={dispatch}>
+          {children}
+        </GlobalDispatchContext.Provider>
+      </GlobalStateContext.Provider>
+    </ThemeProvider>
   )
 }
 
