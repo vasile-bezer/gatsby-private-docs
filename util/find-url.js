@@ -1,8 +1,8 @@
 function findUrl(slug, arr) {
-  return arr.reduce((a, item) => {
-    if (a) return a
-    if (item.uri.includes(slug)) return item
-    if (item.children) return findUrl(slug, item.children)
+  return arr.reduce((prev, current) => {
+    if (prev) return prev
+    if (current.uri.includes(slug)) return current
+    if (current.children) return findUrl(slug, current.children)
   }, null)
 }
 
