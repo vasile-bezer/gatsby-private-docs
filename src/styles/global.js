@@ -18,7 +18,7 @@ const GlobalStyles = createGlobalStyle`
     --borderColor: #bbbbbb;
   }
   html {
-    text-rendering: optimizeSpeed;
+    /*text-rendering: optimizeSpeed;*/
   }
   *,
   *:before,

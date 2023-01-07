@@ -11,7 +11,7 @@ const Footer = () => {
           &#64;dowsky{` `}
           {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a style={{ color: "white" }}href="https://www.gatsbyjs.com">Gatsby</a>
         </p>
         <p style={{ textAlign: "center" }}>
           &#123; tutti gli errori sono intenzionali &#125;

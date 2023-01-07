@@ -1,6 +1,8 @@
 .footer {
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   /*center div using display flex method*/
   justify-content: center;
+  background-color: rebeccapurple;
+  color: white;
 }

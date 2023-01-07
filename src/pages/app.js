@@ -5,7 +5,6 @@ import Profile from "components/profile"
 import Details from "components/details"
 import Login from "components/login"
 import PrivateRoute from "components/private-route"
-import { Breadcrumb } from "react-instantsearch-dom"
 
 const App = ({ location, pageContext }) => {
   return (

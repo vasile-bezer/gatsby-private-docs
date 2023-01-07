@@ -9,7 +9,7 @@ const Status = () => {
   if (!isLoggedIn()) {
     details = (
       <p className={status__text}>
-        Per accedere ai contenuti è necessario essere autenticati
+        Per accedere ai contenuti è necessario autenticarsi
         {`, `}
         <Link to="/app/login">accedi</Link>.
       </p>
@@ -38,7 +38,7 @@ const Status = () => {
   return (
     <div className={status}>
       {details}
-      <Search indices={searchIndices} />
+      {isLoggedIn() && <Search indices={searchIndices} />}
     </div>
   )
 }

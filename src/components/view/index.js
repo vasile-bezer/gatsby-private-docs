@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { view } from "./view.module.css"
+import { view, title__class } from "./view.module.css"
 
 const View = ({ title, children }) => (
   <section className={view}>
-    <h1>{title}</h1>
+    <div className={title__class}>{title}</div>
     {children}
   </section>
 )

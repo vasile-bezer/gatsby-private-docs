@@ -45,7 +45,7 @@ const Layout = ({ location, tableOfContents, children, pageContext }) => {
       <Helmet title="Simple Authentication With Gatsby" />
       {title && <Header siteTitle={title} />}
       <div className={mainWrapper}>
-        {isLoggedIn() && !!crumbs && <BreadCrumbs crumbs={crumbs} />}
+        {isLoggedIn() && <BreadCrumbs crumbs={crumbs || [{crumbLabel:"home"}]} />}
         <div className={other__main__wrapper}>
           <LeftSideBar />
           <main className={(main, siteContentWrapper)} ref={refContainer}>

@@ -1,4 +1,7 @@
 .breadcrumb-container {
   /* padding: top left bottom right*/
-  margin: 0 20px 0px 20px;
+  margin: 0 0 0 0;
+  border-bottom: 1px solid #dadde1;
+  font-size: 20px;
+  font-weight: 500;
 }

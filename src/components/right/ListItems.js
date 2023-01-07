@@ -23,6 +23,7 @@ const ListItemLink = styled(Link)`
   }
   */ &.is-active {
     font-weight: bold;
+    background:none!important;
   }
 `
 

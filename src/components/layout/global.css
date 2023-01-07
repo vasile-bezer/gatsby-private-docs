@@ -6,6 +6,7 @@ body {
   /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
   height: 100vh;
+  text-rendering: optimizelegibility;
 }
 body {
   display: block;
@@ -39,4 +40,9 @@ code {
   border-radius: 0.125rem;
   font-weight: bold;
   padding: 0.125rem 0.25rem;
+}
+
+.menu__list-item--collapsed .menu__caret::before,
+.menu__list-item--collapsed .menu__link--sublist:after {
+ transform:rotate(90deg)
 }

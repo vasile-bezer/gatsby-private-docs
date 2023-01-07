@@ -4,7 +4,9 @@
   flex: 0 0 19rem;
   font-size: 0.875rem;
   box-sizing: border-box;
-  height: auto;
+  height: 100%;
+  border-right: 1px solid #dadde1;
+  will-change: width;
 }
 
 .left-sidebar-nav {
@@ -20,4 +22,36 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.intermediate__div{
+  display: flex;
+}
+.menu__caret {
+  border-radius:.25rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition:  background 200ms cubic-bezier(0.08,0.52,0.52,1);
+}
+
+.menu__caret::before{
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>') 50%/2rem 2rem;
+  filter:none;
+  content:"";
+  height: 1.25rem;
+  width: 1.25rem;
+  transform:rotate(180deg);
+  transition:transform 200ms linear;
+}
+
+.menu__caret:hover,
+.menu__link:hover,
+.menu__list-item-collapsible--active,
+.menu__list-item-collapsible:hover {
+ background-color: rgba(0,0,0,.05);
 }
