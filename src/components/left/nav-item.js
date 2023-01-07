@@ -40,9 +40,11 @@ const NavItem = ({ item }) => {
 		{hasChildren && isCollapsed && (
 			<StyledNavItemChild>
 				{item.children &&
-				item.children.map(subItem => (
-					<NavItem key={"/" + pageUrl + pageId + newId()} item={subItem} />
-				))}
+					item.children.map(subItem => (
+							<NavItem key={"/" + pageUrl + pageId + newId()} item={subItem} />
+						)
+					)
+				}
 			</StyledNavItemChild>
 		)}
 	</>
