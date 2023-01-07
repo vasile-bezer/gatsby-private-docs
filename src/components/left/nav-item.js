@@ -15,7 +15,7 @@ const NavItem = ({ item }) => {
   const pageUrl = item.uri;
   const pageId = item.id;
   const isCollapsed = state?.collapsed[pageUrl];
-  const hasChildren = item.children && item.children.length > 0;
+  const hasChildren = item.children && item.children instanceof Array && item.children.length > 0;
   return (
 	<>
 		<StyledNavItem>
