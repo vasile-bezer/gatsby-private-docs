@@ -1,5 +1,3 @@
-import styled from "styled-components"
-import { Link } from "gatsby"
 import React, { useContext } from "react"
 import {
   GlobalDispatchContext,
@@ -7,6 +5,9 @@ import {
 } from "context/GlobalContextProvider"
 import newId from "../../../util/newid"
 import { menu__caret } from "./left.module.css"
+import StyledNavItem from "./styled-nav-item"
+import StyledNavItemLink from "./styled-nav-item-link"
+import StyledNavItemChild from "./styled-nav-item-child"
 
 const NavItem = ({ item }) => {
   const state = useContext(GlobalStateContext);
@@ -19,9 +20,9 @@ const NavItem = ({ item }) => {
 	<>
 		<StyledNavItem>
 			<div className={`${!isCollapsed ? "menu__list-item--collapsed" : ""}`} style={{ display: "flex" }}>
-				<NavItemLink to={"/" + pageUrl} activeClassName="is-active" aria-expanded="true">
+				<StyledNavItemLink to={"/" + pageUrl} activeClassName="is-active" aria-expanded="true">
 				{item.title}
-				</NavItemLink>
+				</StyledNavItemLink>
 				{hasChildren && (
 					<button
 						aria-label={`Toggle the collapsible sidebar category ${item.title}`}
@@ -37,53 +38,16 @@ const NavItem = ({ item }) => {
 			</div>
 		</StyledNavItem>
 		{hasChildren && isCollapsed && (
-			<NavItemChild>
+			<StyledNavItemChild>
 				{item.children &&
 				item.children.map(subItem => (
 					<NavItem key={"/" + pageUrl + pageId + newId()} item={subItem} />
 				))}
-			</NavItemChild>
+			</StyledNavItemChild>
 		)}
 	</>
   );
 };
-
-const StyledNavItem = styled.li`
-	margin: 0rem 0rem 0rem 0rem;
-	position: relative;
-	overflow: hidden;
-	padding: 0;
-	width: 100%;
-	list-style: none;
-	flex-wrap: wrap;
-	box-sizing: border-box;
-	transition: background 200ms cubic-bezier(0.08,0.52,0.52,1);
-	&:hover {
-		background: rgba(0,0,0,.05);
-	}
-`;
-
-const NavItemLink = styled(Link)`
-	display: inline-block;
-	overflow-wrap: break-word;
-	padding: 0.5rem 0.5rem 0.5rem 1.2rem;
-	flex: 1;
-	font-weight: 500;
-	/*width: 90%;*/
-	position: relative;
-	text-decoration: none;
-	border-radius: .25rem;
-	/* &:focus,
-	&.is-active {
-		font-weight: bold;
-	}*/
-`;
-
-const NavItemChild = styled.ul`
-	margin: 0rem 0 0rem 0.5rem;
-	padding: 0;
-	list-style: none;
-`;
 
 export default (NavItem);
 
