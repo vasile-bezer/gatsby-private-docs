@@ -28,7 +28,7 @@
   min-width: 20rem;
 }
 
-.other__main__wrapper {
+.flex__container {
   display: flex;
   flex: 1;
 }

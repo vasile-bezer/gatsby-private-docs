@@ -13,9 +13,9 @@ import {
   mainWrapper,
   wrapper,
   siteContentWrapper,
-  other__main__wrapper,
+  flex__container,
 } from "./main.module.css"
-import RightSideBar from "components/right"
+import TableOfContents from "components/right"
 const Layout = ({ location, tableOfContents, children, pageContext }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -45,14 +45,14 @@ const Layout = ({ location, tableOfContents, children, pageContext }) => {
       <Helmet title="Simple Authentication With Gatsby" />
       {title && <Header siteTitle={title} />}
       <div className={mainWrapper}>
-        {isLoggedIn() && <BreadCrumbs crumbs={crumbs || [{crumbLabel:"home"}]} />}
-        <div className={other__main__wrapper}>
+        <div title="this div wraps breadcrumbs away from main">{isLoggedIn() && <BreadCrumbs crumbs={crumbs || [{crumbLabel:"home"}]} />}</div>
+        <div className={flex__container}>
           <LeftSideBar />
           <main className={(main, siteContentWrapper)} ref={refContainer}>
             {children}
           </main>
           {isLoggedIn() && tableOfContents && (
-            <RightSideBar
+            <TableOfContents
               location={location}
               tableOfContents={tableOfContents}
             />

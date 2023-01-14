@@ -58,7 +58,7 @@ const GlobalStyles = createGlobalStyle`
   .breadcrumb {
     list-style: none;
     background-color: var(--sidebar);
-    
+    flex 1;
   }
 
   .breadcrumb__list {

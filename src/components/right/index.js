@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import ListItem from "./ListItems"
 import { stickyAside } from "components/right/toc.module.css"
 
-const RightSidebar = ({ tableOfContents, location }) => {
+const TableOfContents = ({ tableOfContents, location }) => {
   const [listItems] = useState(() => {
     if (!!tableOfContents && !tableOfContents.items) {
       return []
@@ -25,11 +25,11 @@ const RightSidebar = ({ tableOfContents, location }) => {
   })
 
   return (
-    <RightSidebarWrapper>
-      <RightSidebarNav>
+    <TableOfContentsWrapper>
+      <TableOfContentsNav>
         <div className={stickyAside}>
-          <RightSidebarTitle>Contenuti</RightSidebarTitle>
-          <RightSidebarList>
+          <TableOfContentsTitle>Contenuti</TableOfContentsTitle>
+          <TableOfContentsList>
             <div
               items={listItems.map(item => {
                 return item.url.substring(1)
@@ -41,14 +41,14 @@ const RightSidebar = ({ tableOfContents, location }) => {
                 </li>
               ))}
             </div>
-          </RightSidebarList>
+          </TableOfContentsList>
         </div>
-      </RightSidebarNav>
-    </RightSidebarWrapper>
+      </TableOfContentsNav>
+    </TableOfContentsWrapper>
   )
 }
 
-const RightSidebarWrapper = styled.aside`
+const TableOfContentsWrapper = styled.aside`
   /*display: table;*/
   /*flex: 0 0 16rem;
   font-size: 0.75rem;
@@ -65,7 +65,7 @@ const RightSidebarWrapper = styled.aside`
   float: right;
 `
 
-const RightSidebarNav = styled.nav`
+const TableOfContentsNav = styled.nav`
   margin-left: 10px;
   position: relative;
   display: block;
@@ -75,14 +75,14 @@ const RightSidebarNav = styled.nav`
   flex: 1;
 `
 
-const RightSidebarTitle = styled.p`
+const TableOfContentsTitle = styled.p`
   margin-top: 0;
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
 `
 
-const RightSidebarList = styled.ul`
+const TableOfContentsList = styled.ul`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -96,9 +96,9 @@ const RightSidebarList = styled.ul`
   }
 `
 
-RightSidebar.propTypes = {
+TableOfContents.propTypes = {
   tableOfContents: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 }
 
-export default RightSidebar
+export default TableOfContents
