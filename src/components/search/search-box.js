@@ -1,20 +1,36 @@
-import React from "react"
+import React, {useState} from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
-import { Search as SearchIcon } from "@styled-icons/fa-solid"
 import MagnifyingGlass from "./magnifying-glass"
-export default connectSearchBox(
-  ({ refine, currentRefinement, className, onFocus }) => (
+import debounce from 'lodash.debounce';
+
+const onChange = (refine, value) => {
+  refine(value);
+};
+
+const debounced = debounce(onChange, 500);
+
+const SearchBox = ({ refine, currentRefinement, className, onFocus }) => {
+  const [state, setState] = useState({ value: currentRefinement });
+  const onChangeDebounced = (event) => {
+    setState({ value: event.currentTarget.value });
+    debounced(refine, event.currentTarget.value);
+  };
+
+  return(
     <form className={className}>
       <input
         className="SearchInput"
         type="text"
         placeholder="Cerca"
         aria-label="Search"
-        onChange={e => refine(e.target.value)}
-        value={currentRefinement}
+        size="large"
+        onChange={onChangeDebounced}
+        value={state.value}
         onFocus={onFocus}
       />
       <MagnifyingGlass className="SearchIcon" />
     </form>
-  )
-)
+  );
+}
+
+export default connectSearchBox(SearchBox)

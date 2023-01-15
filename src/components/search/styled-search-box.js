@@ -1,21 +1,5 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import SearchBox from "./search-box"
-
-const open = css`
-  width: 10em;
-  background: ${({ theme }) => theme.background};
-  cursor: text;
-  margin-left: -1.6em;
-  padding-left: 1.6em;
-`
-
-const closed = css`
-  width: 0;
-  background: transparent;
-  cursor: pointer;
-  margin-left: -1em;
-  padding-left: 1em;
-`
 
 export default styled(SearchBox)`
   display: inline-flex;
@@ -23,9 +7,10 @@ export default styled(SearchBox)`
   align-items: center;
   background-color: #fff;
   position: relative;
-  border: 1px solid ${p => p.theme.colors.borderColor};
-  border-radius: 4px;
+  border: 1px solid #CCC;
+  border-radius: 16px;
   overflow: hidden;
+  transition: border 150ms linear, color 150ms linear;
   &:focus-within {
     border: 1px solid rgb(38, 132, 255) !important;
     & > svg {
@@ -62,6 +47,7 @@ export default styled(SearchBox)`
     margin-right: 1px;
     cursor: pointer;
     color: #bbb;
+    transition: color 150ms linear;
     &:hover {
       color: #000 !important;
       borderleft: 1px solid var #000 !important;
