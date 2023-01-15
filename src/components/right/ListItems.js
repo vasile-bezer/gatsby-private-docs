@@ -14,6 +14,7 @@ const ListItemLink = styled(Link)`
   padding: 0.2rem 0;
   width: 100%;
   text-decoration: none;
+  font-size: .8rem;
   ${p => console.log(p)}
   color: ${p => p.theme.colors.text}
   

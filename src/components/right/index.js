@@ -28,7 +28,6 @@ const TableOfContents = ({ tableOfContents, location }) => {
     <TableOfContentsWrapper>
       <TableOfContentsNav>
         <div className={stickyAside}>
-          <TableOfContentsTitle>Contenuti</TableOfContentsTitle>
           <TableOfContentsList>
             <div
               items={listItems.map(item => {
@@ -36,7 +35,7 @@ const TableOfContents = ({ tableOfContents, location }) => {
               })}
             >
               {listItems.map(item => (
-                <li key={item.url}>
+                <li style={{margin: "0px 8px 0px 8px"}} key={item.url}>
                   <ListItem location={location} item={item} />
                 </li>
               ))}
@@ -83,11 +82,12 @@ const TableOfContentsTitle = styled.p`
 `
 
 const TableOfContentsList = styled.ul`
+  border-left: 1px solid #dadde1;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   margin: 0;
-  padding: 0;
+  padding: 10px 10px 10px;
   list-style: none;
   & ul {
     margin: 0;
