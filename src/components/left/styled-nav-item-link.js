@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { Link as RouterLink } from '@reach/router'
+import { isLoggedIn } from "auth/auth"
 
-export default styled(Link)`
+export default styled(isLoggedIn() ? Link : RouterLink)`
 display: inline-block;
 overflow-wrap: break-word;
 padding: 0.5rem 0.5rem 0.5rem 1.2rem;
