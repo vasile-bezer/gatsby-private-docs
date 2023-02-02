@@ -8,7 +8,9 @@
 }
 
 .status__text {
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   max-width: 640px;
   text-align: right;
+  display: flex; 
+  align-items: center;
 }

@@ -25,7 +25,7 @@
 }
 
 .form__button {
-  background-color: rebeccapurple;
+  background-color: var(--primary);
   border: 0;
   color: white;
   font-size: 1.25rem;
@@ -42,7 +42,7 @@
 .form__button:hover,
 .form__button:active,
 .form__button:focus {
-  background-color: color(rebeccapurple lightness(-20%));
+  background-color: color(var(--primary) lightness(-20%));
 }
 .label__wrapper{
   display: flex;

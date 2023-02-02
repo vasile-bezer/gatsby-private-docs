@@ -1,5 +1,5 @@
 .header {
-  background-color: rebeccapurple;
+  background-color: var(--primary);
   /*position: fixed;*/
   top: 0;
   left: 0;
@@ -39,6 +39,7 @@
   margin-top: 0;
   padding: 0.25rem;
   text-decoration: none;
+  border-radius: .25rem;
 }
 
 .header__linkHome {
@@ -48,8 +49,9 @@
 
 .header__link:hover,
 .header__link:active {
+  transition: background 200ms linear;
   background: white;
-  color: rebeccapurple;
+  color: var(--primary);
 }
 
 /*
@@ -59,6 +61,6 @@
 *** -----FOCUS PSEUDO CLASS-----
 .header__link:focus {
   background: white;
-  color: rebeccapurple;
+  color: var(--primary);
 }
 */
