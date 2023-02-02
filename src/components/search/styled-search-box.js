@@ -15,6 +15,9 @@ export default styled(SearchBox)`
     border: 1px solid rgb(38, 132, 255) !important;
     & > svg {
       color: #777;
+      &:hover {
+        color: black;
+      }
     }
   }
   &:hover {
@@ -44,12 +47,12 @@ export default styled(SearchBox)`
   }
 
   .SearchIcon {
-    margin-right: 1px;
+    margin-right: 5px;
     cursor: pointer;
     color: #bbb;
     transition: color 150ms linear;
     &:hover {
-      color: #000 !important;
+      color: #666;
       borderleft: 1px solid var #000 !important;
     }
     borderleft: 1px solid #bbb;
