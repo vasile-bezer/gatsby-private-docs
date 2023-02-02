@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import styled from "styled-components"
 import { connectSearchBox } from "react-instantsearch-dom"
 import MagnifyingGlass from "./magnifying-glass"
 import debounce from 'lodash.debounce';
@@ -28,9 +29,16 @@ const SearchBox = ({ refine, currentRefinement, className, onFocus }) => {
         value={state.value}
         onFocus={onFocus}
       />
-      <MagnifyingGlass className="SearchIcon" />
+      <StyledMagnifyingGlass className="SearchIcon" />
     </form>
   );
 }
+const StyledMagnifyingGlass = styled(MagnifyingGlass)`
+  margin: 0px 0px 0px 0px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+`
+
 
 export default connectSearchBox(SearchBox)
