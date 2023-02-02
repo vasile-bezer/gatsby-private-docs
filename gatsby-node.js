@@ -80,4 +80,12 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 	},
   }
   actions.createNode(node)
+  actions.createNode({
+	content: json
+	,id: createNodeId("json888toc")
+	,internal: {
+		type: "json888toc"
+		,contentDigest: createContentDigest(json),
+	},
+  })
 }
