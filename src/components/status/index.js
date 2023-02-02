@@ -9,9 +9,8 @@ const Status = () => {
   if (!isLoggedIn()) {
     details = (
       <p className={status__text}>
-        Per accedere ai contenuti è necessario autenticarsi
-        {`, `}
-        <Link to="/app/login">accedi</Link>.
+        {`Per accedere ai contenuti è necessario autenticarsi,`}&nbsp;
+        <Link to="/app/login">accedi</Link>{`.`}
       </p>
     )
   } else {
@@ -19,9 +18,7 @@ const Status = () => {
 
     details = (
       <p className={status__text}>
-        Connesso come {name} ({email}
-        )!
-        {` `}
+        Connesso come {name} ({email}), &nbsp;
         <a
           href="/"
           onClick={event => {
@@ -30,7 +27,7 @@ const Status = () => {
           }}
         >
           scollegati
-        </a>
+        </a>{`.`}
       </p>
     )
   }
