@@ -9,59 +9,59 @@ import LeftSideBar from "components/left"
 // Global styles and component-specific styles.
 import "./global.css"
 import {
-  main,
-  mainWrapper,
-  wrapper,
-  siteContentWrapper,
-  flex__container,
+	main,
+	mainWrapper,
+	wrapper,
+	siteContentWrapper,
+	flex__container,
 } from "./main.module.css"
 import TableOfContents from "components/right"
 const Layout = ({ location, tableOfContents, children, pageContext }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+	const data = useStaticQuery(graphql`
+		query SiteTitleQuery {
+			site {
+				siteMetadata {
+					title
+				}
+			}
+		}
+	`)
 
-  /*object destructuration */
-  const {
-    site: {
-      siteMetadata: { title },
-    },
-  } = data
-  /*object destructuration with default value and possible undefined*/
-  //const { breadcrumb = undefined } = pageContext || {}
-  const { breadcrumb: { crumbs = undefined } = {} } = pageContext || {}
+	/*object destructuration */
+	const {
+		site: {
+			siteMetadata: { title },
+		},
+	} = data
+	/*object destructuration with default value and possible undefined*/
+	//const { breadcrumb = undefined } = pageContext || {}
+	const { breadcrumb: { crumbs = undefined } = {} } = pageContext || {}
 
-  const refContainer = useRef(undefined)
+	const refContainer = useRef(undefined)
 
-  //crossOriginIsolated
-  return (
-    <div className={wrapper}>
-      <Helmet title="Simple Authentication With Gatsby" />
-      {title && <Header siteTitle={title} />}
-      <div className={mainWrapper}>
-        <div title="this div wraps breadcrumbs away from main">{isLoggedIn() && <BreadCrumbs crumbs={crumbs || [{crumbLabel:"home"}]} />}</div>
-        <div className={flex__container}>
-          <LeftSideBar />
-          <main className={(main, siteContentWrapper)} ref={refContainer}>
-            {children}
-          </main>
-          {isLoggedIn() && tableOfContents && (
-            <TableOfContents
-              location={location}
-              tableOfContents={tableOfContents}
-            />
-          )}
-        </div>
-        <Footer />
-      </div>
-    </div>
-  )
+	//crossOriginIsolated
+	return (
+		<div className={wrapper}>
+			<Helmet title="Simple Authentication With Gatsby" />
+			{title && <Header siteTitle={title} />}
+			<div className={mainWrapper}>
+				<div>{isLoggedIn() && <BreadCrumbs crumbs={crumbs || [{crumbLabel:"home"}]} />}</div>
+				<div className={flex__container}>
+					<LeftSideBar />
+					<main className={(main, siteContentWrapper)} ref={refContainer}>
+						{children}
+					</main>
+					{isLoggedIn() && tableOfContents && (
+						<TableOfContents
+							location={location}
+							tableOfContents={tableOfContents}
+						/>
+					)}
+				</div>
+			<Footer />
+			</div>
+		</div>
+	)
 }
 
 export default Layout
