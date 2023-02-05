@@ -5,36 +5,41 @@ import View from "components/view"
 import { handleLogin, isLoggedIn } from "auth/auth"
 
 class Login extends React.Component {
-  state = {
-    username: ``,
-    password: ``,
-  }
+	constructor(props, first, second, third){
+		console.log(props, first, second, third);
+		super(props);
+	}
 
-  handleUpdate(event) {
-    this.setState({
-      [event.target.name]: event.target.value,
-    })
-  }
+	state = {
+		username: ``,
+		password: ``,
+	}
 
-  handleSubmit(event) {
-    event.preventDefault()
-    handleLogin(this.state)
-  }
+	handleUpdate(event) {
+		this.setState({
+			[event.target.name]: event.target.value,
+		})
+	}
 
-  render() {
-    if (isLoggedIn()) {
-      navigate(`/app/profile`)
-    }
+	handleSubmit(event) {
+		event.preventDefault()
+		handleLogin(this.state)
+	}
 
-    return (
-      <View title="Accedi">
-        <Form
-          handleUpdate={e => this.handleUpdate(e)}
-          handleSubmit={e => this.handleSubmit(e)}
-        />
-      </View>
-    )
-  }
+	render() {
+		if (isLoggedIn()) {
+			navigate(`/app/profile`)
+		}
+
+		return (
+			<View title="Accedi all'app">
+				<Form
+					handleUpdate={e => this.handleUpdate(e)}
+					handleSubmit={e => this.handleSubmit(e)}
+				/>
+			</View>
+		)
+	}
 }
 
 export default Login

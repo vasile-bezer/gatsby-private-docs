@@ -6,16 +6,17 @@ import Details from "components/details"
 import Login from "components/login"
 import PrivateRoute from "components/private-route"
 
-const App = ({ location, pageContext }) => {
-  return (
-    <Layout location={location} pageContext={pageContext}>
-      <Router>
-        <PrivateRoute path="/guacamole/details" component={Details} />
-        <PrivateRoute path="/app/details" component={Details} />
-        <PrivateRoute path="/app/profile" component={Profile} />
-        <Login path="/app/login" />
-      </Router>
-    </Layout>
-  )
+const App = ({ location, pageContext, prevLocation }) => {
+	console.log(prevLocation)
+	return (
+		<Layout location={location} pageContext={pageContext}>
+			<Router>
+				<PrivateRoute path="/guacamole/details" component={Details} />
+				<PrivateRoute path="/app/details" component={Details} />
+				<PrivateRoute path="/app/profile" component={Profile} />
+				<Login path="/app/login" />
+			</Router>
+		</Layout>
+	)
 }
 export default App
